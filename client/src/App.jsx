@@ -24,7 +24,7 @@ return 1+1;
     async function reviewCode() {
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:3000/ai/get-review", { code });
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/ai/get-review`, { code });
             console.log(response.data);
             setReview(response.data);
             setLoading(false);
